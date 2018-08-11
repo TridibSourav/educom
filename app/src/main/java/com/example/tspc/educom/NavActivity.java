@@ -94,4 +94,8 @@ public class NavActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void onClick(View view) {
+
+    }
 }

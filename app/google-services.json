@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "931295401189",
+    "firebase_url": "https://educom-da32b.firebaseio.com",
+    "project_id": "educom-da32b",
+    "storage_bucket": "educom-da32b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931295401189:android:534596b610ea9f28",
+        "android_client_info": {
+          "package_name": "com.example.tspc.educom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931295401189-j49a056mmtuc0tqv43vkgf7av1ci8189.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tspc.educom",
+            "certificate_hash": "d8e0db778c891a4394a70cb81072c561ace544f1"
+          }
+        },
+        {
+          "client_id": "931295401189-5ibhs6l8ibb5ih5a1cmr34g28i7p5hfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO49xavbzY8uMVs2wV36UueXgYHUwi7xo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931295401189-5ibhs6l8ibb5ih5a1cmr34g28i7p5hfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
