@@ -34,7 +34,7 @@
             android:textColor="#81ecec"
             android:textSize="30dp" />
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/emul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="email"
@@ -45,7 +45,7 @@
             android:textColor="#ffffff"
             android:singleLine="true" />
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/paswrd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -63,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Submit"
+            android:text="@string/submit"
             android:textSize="18dp"
             android:background="#81ecec"
             android:textColor="#000000"

@@ -2,7 +2,7 @@ package com.example.tspc.educom;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,9 +15,18 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.tspc.educom.Model.UserModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.util.concurrent.ExecutionException;
 
 public class RegActivity extends AppCompatActivity {
     EditText Ename,Eemail,Epass,EconPass,EintName;
@@ -27,12 +36,28 @@ public class RegActivity extends AppCompatActivity {
     Button b1;
 
     UserModel user;
+    Boolean stat;
+
+    private FirebaseAuth mAuth;
+    FirebaseDatabase database;
+    DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reg);
         init();
+        mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("users");
+
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
     }
 
     private void init(){
@@ -42,9 +67,9 @@ public class RegActivity extends AppCompatActivity {
         Epass=findViewById(R.id.password);
         EconPass=findViewById(R.id.confirm_pass);
         EintName=findViewById(R.id.insName);
-        userCat=findViewById(R.id.Rgrp);
-        teacher=findViewById(R.id.teach);
-        student=findViewById(R.id.stu);
+        userCat=(RadioGroup) findViewById(R.id.Rgrp);
+        //teacher=findViewById(R.id.teach);
+        //student=findViewById(R.id.stu);
     }
 
     public void RegisterDone(View view) {
@@ -53,54 +78,93 @@ public class RegActivity extends AppCompatActivity {
         uInst=EintName.getText().toString();
         uPass=Epass.getText().toString();
         uConpass=EconPass.getText().toString();
-        userCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        uCat="Teacher";
+
+       /* userCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton rb= (RadioButton) findViewById(checkedId);
                 uCat = rb.getText().toString();
-                //Log.w("********",uCat);
+                Log.w("********",uCat);
             }
-        });
+        });*/
+
+
+
+
+
         boolean status=validate(uName,uEmail,uPass,uConpass,uInst,uCat);
+        //boolean status=true;
         if (status){
             user= new UserModel(uName,uEmail,uPass,uCat,uInst);
-            networkRequest(user);
+            //networkRequest(user);
+            ServerRequest(user);
         }
     }
 
     private void networkRequest(UserModel user) {
-        if (checkNetworkSettings()){
-            if (checkInternetAvailibility()){
-                ServerRequest(user);
-            }else {
-                AlertShow("No Internet connection");
-            }
-        }else {
-            AlertShow("Turn on Internet connection");
-        }
-
-
-    }
-
-    private void ServerRequest(UserModel user) {
-
-    }
-
-    private boolean checkNetworkSettings(){
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(RegActivity.CONNECTIVITY_SERVICE);
-        return cm.getActiveNetworkInfo() != null;
-    }
-
-    private boolean checkInternetAvailibility(){
         try {
-            final InetAddress address = InetAddress.getByName("www.google.com");
-            return !address.equals("");
-        } catch (UnknownHostException e) {
+            stat=new com.masud.dev.examresultsbd.utils.CheckInternet(this).execute().get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        return false;
+
+        if (stat){
+                ServerRequest(user);
+        }else {
+            AlertShow("No Internet connection");
+        }
+
 
     }
+
+    private void ServerRequest(final UserModel mUser) {
+        mAuth.createUserWithEmailAndPassword(mUser.getEmail(), mUser.getPassword())
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+
+                            try {
+                                String uid=user.getUid();
+                                databaseUpdate(mUser,uid);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                                Log.w("*****",e.toString());
+                            }
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            //Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(RegActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    private void databaseUpdate(UserModel mUser,String userId) {
+
+        myRef.child(userId).setValue(user);
+    }
+
+    private void updateUI(FirebaseUser user) {
+        if (user != null) {
+            String uid = user.getUid();
+            Log.w("**********",uid);
+        }
+
+    }
+
 
     private void AlertShow(String msg){
         AlertDialog alertDialog = new AlertDialog.Builder(RegActivity.this).create();
