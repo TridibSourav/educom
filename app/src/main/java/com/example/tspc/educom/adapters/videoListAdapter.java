@@ -6,10 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tspc.educom.Model.Item;
 import com.example.tspc.educom.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -39,6 +41,7 @@ public class videoListAdapter extends RecyclerView.Adapter<videoListAdapter.View
         Item video=videoList.get(position);
         holder.t1.setText(video.getSnippet().getTitle());
         holder.t2.setText(video.getSnippet().getDescription());
+        Picasso.get().load(video.getSnippet().getThumbnails().getDefault().getUrl()).into(holder.imageView);
 
     }
 
@@ -49,11 +52,13 @@ public class videoListAdapter extends RecyclerView.Adapter<videoListAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView t1, t2;
+        public ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             t1=itemView.findViewById(R.id.title);
             t2=itemView.findViewById(R.id.desc);
+            imageView=itemView.findViewById(R.id.thumb);
         }
     }
 }
