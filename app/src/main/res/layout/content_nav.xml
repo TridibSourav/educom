@@ -1,17 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/go"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".NavActivity"
     tools:showIn="@layout/app_bar_nav">
-
-    <Button
-        android:id="@+id/button"
-        android:onClick="onClick"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="video" />
-</RelativeLayout>
+        android:orientation="vertical"
+        android:weightSum="10">
+
+
+        <!-- First row -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- First item -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="20dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:text="Video tutorials"
+                    android:textStyle="bold"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view2"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardCornerRadius="20dp"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/info_text2"
+                    android:text="Book library"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/book"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+        <!--text-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="41dp"
+                android:src="@drawable/gone" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="ducom"
+                android:textColor="#6dc9c9"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 2nd row -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- First item -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view3"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text3"
+                        android:text="Quiz"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/quiz"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view4"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text4"
+                        android:text="Chat Room"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/chat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

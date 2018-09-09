@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#454545"
+    android:background="@drawable/go"
     tools:context=".RegActivity">
 
     <ScrollView
@@ -19,26 +19,35 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="15dp">
-
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="serif"
-                android:text="REGISTER"
-                android:textColor="#81ecec"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="47dp"
+                    android:layout_height="41dp"
+                    android:src="@drawable/gone" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="ducom"
+                    android:textColor="#81ecec"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
             <TextView
                 android:id="@+id/textw"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="monospace"
                 android:text="________________________"
                 android:textColor="#81ecec"
-                android:textStyle="bold" />
+                android:textSize="20dp"/>
 
             <EditText
                 android:id="@+id/name"
@@ -51,7 +60,12 @@
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textColor="#ffff"
-                android:textColorHint="#81ecec" />
+                android:textColorHint="#81ecec"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <EditText
                 android:id="@+id/insName"
@@ -62,16 +76,25 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textAlignment="center"
-                android:textColorHint="#81ecec" />
+                android:textColorHint="#81ecec"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="What is your position in the Institution?"
                 android:textColor="#81ecec"
                 android:textSize="17dp"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <RadioGroup
                 android:layout_width="wrap_content"
@@ -101,32 +124,42 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
-                android:textColorHint="#81ecec" />
+                android:textColorHint="#81ecec"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password"
+                android:hint="Password"
                 android:imeActionId="6"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textAlignment="center"
-                android:textColorHint="#81ecec" />
+                android:textColorHint="#81ecec"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <EditText
                 android:id="@+id/confirm_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/confirm_password"
+                android:hint="Confirm Password"
                 android:imeActionId="6"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
@@ -134,7 +167,11 @@
                 android:singleLine="true"
                 android:textAlignment="center"
                 android:textColor="#ffff"
-                android:textColorHint="#81ecec" />
+                android:textColorHint="#81ecec"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:background="#ab000000"/>
 
             <Button
                 android:onClick="RegisterDone"
@@ -143,8 +180,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="#81ecec"
-                android:text="@string/register"
+                android:background="@drawable/round"
+                android:text="Register"
+                android:textColor="#4e4e4e"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 

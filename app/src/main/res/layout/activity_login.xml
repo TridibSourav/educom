@@ -4,85 +4,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images"
+    android:background="@drawable/go"
     tools:context=".LoginActivity">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/email_login_form"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.8"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:padding="10dp"
-        android:background="@drawable/images"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:text="LOGIN"
-            android:textStyle="bold"
-            android:textColor="#81ecec"
-            android:textSize="30dp" />
-        <EditText
-            android:id="@+id/emul"
+        <LinearLayout
+            android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="email"
-            android:textAlignment="center"
-            android:textColorHint="#81ecec"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColor="#ffffff"
-            android:singleLine="true" />
-        <EditText
-            android:id="@+id/paswrd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:textAlignment="center"
-            android:imeActionId="6"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColorHint="#81ecec"
-            android:singleLine="true"
-            android:textColor="#ffffff"/>
-        <Button
-            android:id="@+id/email_sign_in_button"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/submit"
-            android:textSize="18dp"
-            android:background="#81ecec"
-            android:textColor="#000000"
-            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/regbtn"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="reg page"
-            android:textSize="18dp"
-            android:background="#81ecec"
-            android:textColor="#000000"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    </LinearLayout>
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/gone" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="ducom"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#81ecec"
+                    android:textSize="40dp" />
+            </LinearLayout>
 
-</ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#ab000000"
+                android:padding="10dp">
+
+
+                <EditText
+                    android:id="@+id/emul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:textAlignment="center"
+                    android:textColorHint="#81ecec"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="#ffffff"
+                    android:singleLine="true" />
+                <EditText
+                    android:id="@+id/paswrd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:textAlignment="center"
+                    android:imeActionId="6"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColorHint="#81ecec"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"/>
+                <Button
+                    android:id="@+id/email_sign_in_button"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="submit"
+                    android:textSize="18dp"
+                    android:background="@drawable/round"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Not a member?"
+                    android:layout_marginTop="16dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="italic"/>
+
+                <Button
+                    android:id="@+id/regbtn"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:text="reg page"
+                    android:textSize="18dp"
+                    android:background="@drawable/round"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </RelativeLayout>

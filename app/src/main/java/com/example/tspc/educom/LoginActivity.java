@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //alada
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(LoginActivity.this, TabActivity.class);
+        Intent intent = new Intent(LoginActivity.this, RegActivity.class);
         startActivity(intent);
 
 

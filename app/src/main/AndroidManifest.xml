@@ -17,14 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AllItemLIst">
+        <activity android:name=".RegActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegActivity" />
+        <activity android:name=".LoginActivity" />
         <activity
             android:name=".NavActivity"
             android:label="@string/title_activity_nav"
@@ -33,10 +33,10 @@
             android:name=".TabActivity"
             android:label="@string/title_activity_tab"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PaidBook" />
-        <activity android:name=".FreeBook" />
+        <!--<activity android:name=".PaidBook" />-->
+        <!--<activity android:name=".FreeBook" />-->
         <activity android:name=".PlayerActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".AllItemLIst"></activity>
     </application>
 
 </manifest>
