@@ -1,5 +1,6 @@
 package com.example.tspc.educom;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,11 +26,15 @@ public class AllItemLIst extends AppCompatActivity {
 
     RecyclerView recyclerView;
     List<Item> videolist;
+    String playlist_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_item_list);
+
+        Intent intent= getIntent();
+        playlist_id=intent.getStringExtra("playlist_id");
 
         videolist= new ArrayList<>();
         recyclerView=findViewById(R.id.itrmrecycler);
@@ -44,7 +49,7 @@ public class AllItemLIst extends AppCompatActivity {
                 .build();
         youtubeInterface Api=retrofit.create(youtubeInterface.class);
 
-        Api.getPlayListData("PLgH5QX0i9K3p9xzYLFGdfYliIRBLVDRV5").enqueue(new Callback<YoutubeDataResponse>() {
+        Api.getPlayListData(playlist_id).enqueue(new Callback<YoutubeDataResponse>() {
             @Override
             public void onResponse(Call<YoutubeDataResponse> call, Response<YoutubeDataResponse> response) {
                 Log.w("#####",response.body().getEtag());

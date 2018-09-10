@@ -1,7 +1,9 @@
 package com.example.tspc.educom.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.tspc.educom.AllItemLIst;
 import com.example.tspc.educom.Model.Item;
+import com.example.tspc.educom.PlayerActivity;
 import com.example.tspc.educom.R;
 import com.squareup.picasso.Picasso;
 
@@ -39,9 +43,19 @@ public class videoListAdapter extends RecyclerView.Adapter<videoListAdapter.View
     @Override
     public void onBindViewHolder(@NonNull videoListAdapter.ViewHolder holder, int position) {
         Item video=videoList.get(position);
+
+        final String video_id=video.getContentDetails().getVideoId();
         holder.t1.setText(video.getSnippet().getTitle());
-        holder.t2.setText(video.getSnippet().getDescription());
         Picasso.get().load(video.getSnippet().getThumbnails().getDefault().getUrl()).into(holder.imageView);
+        holder.videoCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(mContext, PlayerActivity.class);
+                intent.putExtra("video_id",video_id);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
@@ -51,14 +65,16 @@ public class videoListAdapter extends RecyclerView.Adapter<videoListAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView t1, t2;
+        public TextView t1;
         public ImageView imageView;
+        public CardView videoCard;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
             t1=itemView.findViewById(R.id.title);
-            t2=itemView.findViewById(R.id.desc);
             imageView=itemView.findViewById(R.id.thumb);
+            videoCard=itemView.findViewById(R.id.videoCardItem);
         }
     }
 }

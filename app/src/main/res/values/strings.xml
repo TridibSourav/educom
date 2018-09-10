@@ -33,4 +33,16 @@
         completions."
     </string>
     <string name="submit">Submit</string>
+
+
+    <!--Category List ID-->
+    <string name="android_cat">PLS1QulWo1RIbb1cYyzZpLFCKvdYV_yJ-E</string>
+    <string name="algorithm_cat">PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb</string>
+    <string name="database_cat">PL08903FB7ACA1C2FB</string>
+    <string name="ai_cat">PL9ooVrP1hQOGHNaCT7_fwe9AabjZI1RjI</string>
+    <string name="html_cat">PLr6-GrHUlVf_ZNmuQSXdS197Oyr1L9sPB</string>
+    <string name="css_cat">PLr6-GrHUlVf8JIgLcu3sHigvQjTw_aC9C</string>
+    <string name="wordprs_cat">PLfOXCtnURNbZjLUyU_Isp39VdAjqEctNw</string>
+    <string name="java_cat">PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al</string>
+
 </resources>

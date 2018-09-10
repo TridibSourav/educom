@@ -28,6 +28,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <android.support.v7.widget.CardView
+                android:onClick="ShowVideoCategory"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view"
                 android:layout_gravity="center"
@@ -55,6 +56,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <android.support.v7.widget.CardView
+                android:onClick="showBooks"
                 xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view2"
                 android:layout_gravity="center"

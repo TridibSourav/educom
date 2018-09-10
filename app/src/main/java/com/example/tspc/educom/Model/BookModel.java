@@ -9,13 +9,16 @@ public class BookModel {
     String BName;
     String WName;
     String Price;
+    String link;
+    String rating;
 
-
-    public BookModel(String image, String BName, String WName, String price) {
+    public BookModel(String image, String BName, String WName, String price, String link, String rating) {
         Image = image;
         this.BName = BName;
         this.WName = WName;
         Price = price;
+        this.link = link;
+        this.rating = rating;
     }
 
     public String getImage() {
@@ -48,6 +51,22 @@ public class BookModel {
 
     public void setPrice(String price) {
         Price = price;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }
 

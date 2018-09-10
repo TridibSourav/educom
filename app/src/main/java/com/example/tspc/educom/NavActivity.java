@@ -98,4 +98,12 @@ public class NavActivity extends AppCompatActivity
     public void onClick(View view) {
 
     }
+
+    public void ShowVideoCategory(View view) {
+        startActivity(new Intent(NavActivity.this,VideoCategory.class));
+    }
+
+    public void showBooks(View view) {
+        startActivity(new Intent(NavActivity.this,TabActivity.class));
+    }
 }

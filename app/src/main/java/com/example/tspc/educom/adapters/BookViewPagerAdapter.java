@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.tspc.educom.Model.BookModel;
 import com.example.tspc.educom.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +53,19 @@ public class BookViewPagerAdapter extends PagerAdapter {
         TextView name= v.findViewById(R.id.book_name);
         TextView writer= v.findViewById(R.id.book_writer);
         TextView price= v.findViewById(R.id.book_price);
+        RatingBar ratingBar= v.findViewById(R.id.rating);
+        ratingBar.setVisibility(View.GONE);
 
 
         if(bookList!=null){
             BookModel book= bookList.get(position);
-            img.setImageResource(R.drawable.harry);
+            Picasso.get().load(book.getImage()).into(img);
             name.setText(book.getBName());
             writer.setText(book.getWName());
             price.setText(book.getPrice());
+            /*Double rating=Double.parseDouble(book.getRating());
+            int star=(int) Math.round(rating);
+            ratingBar.setNumStars(star);*/
 
         }else{
             img.setImageResource(R.drawable.images);

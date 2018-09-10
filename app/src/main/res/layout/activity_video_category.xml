@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoCategory">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+
+        <!-- First row -->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- First item -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view"
+                    android:layout_gravity="center"
+                    android:onClick="android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text"
+                        android:text="Android"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view2"
+                    android:layout_gravity="center"
+                    android:onClick="algorithm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text2"
+                        android:text="Algorithm"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/algorithm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 2nd row -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- First item -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view3"
+                    android:layout_gravity="center"
+                    android:onClick="DataBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text3"
+                        android:text="database"
+                        android:textSize="20dp"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/database"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view4"
+                    android:layout_gravity="center"
+                    android:onClick="ArtiIntel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text4"
+                        android:text="A.I"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/ai"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--3rd row-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- First item -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view5"
+                    android:layout_gravity="center"
+                    android:onClick="Html"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text5"
+                        android:text="html"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/html"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view6"
+                    android:onClick="Css"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text6"
+                        android:text="CSS"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/css"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--4th row-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- fourth item -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view7"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:onClick="WrdPrs"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text7"
+                        android:text="Word Press"
+                        android:textStyle="bold"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/wp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view8"
+                    android:layout_gravity="center"
+                    android:onClick="JvSrpt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    card_view:cardCornerRadius="20dp"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/info_text8"
+                        android:text="js"
+                        android:layout_gravity="bottom"
+                        android:gravity="center"
+                        android:drawableTop="@drawable/js"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
