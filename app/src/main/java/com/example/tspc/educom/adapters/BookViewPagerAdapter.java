@@ -1,15 +1,19 @@
 package com.example.tspc.educom.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tspc.educom.Model.BookModel;
 import com.example.tspc.educom.R;
@@ -23,6 +27,7 @@ import java.util.List;
  * Copyright (c) 2018
  */
 public class BookViewPagerAdapter extends PagerAdapter {
+
 
     Context mContext;
     //LayoutInflater layoutInflater;
@@ -55,6 +60,8 @@ public class BookViewPagerAdapter extends PagerAdapter {
         TextView price= v.findViewById(R.id.book_price);
         RatingBar ratingBar= v.findViewById(R.id.rating);
         ratingBar.setVisibility(View.GONE);
+        Button btn=v.findViewById(R.id.btnBuy);
+
 
 
         if(bookList!=null){
@@ -63,6 +70,16 @@ public class BookViewPagerAdapter extends PagerAdapter {
             name.setText(book.getBName());
             writer.setText(book.getWName());
             price.setText(book.getPrice());
+            final String book_url=book.getLink();
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(mContext,"Book Purchased",Toast.LENGTH_LONG).show();
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(book_url));
+                    mContext.startActivity(browserIntent);
+
+                }
+            });
             /*Double rating=Double.parseDouble(book.getRating());
             int star=(int) Math.round(rating);
             ratingBar.setNumStars(star);*/

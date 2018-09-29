@@ -25,8 +25,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:screenOrientation="landscape"
-            android:name=".PlayerActivity" />
+            android:name=".PlayerActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".NavActivity"
             android:label="@string/title_activity_nav"
@@ -39,7 +39,12 @@
         <!-- <activity android:name=".FreeBook" /> -->
         <activity android:name=".RegActivity" />
         <activity android:name=".AllItemLIst" />
-        <activity android:name=".VideoCategory"></activity>
+        <activity android:name=".VideoCategory" />
+        <activity android:name=".QuizCat" />
+        <activity android:name=".QuizItem" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".quiz.QuizSetList" />
+        <activity android:name=".ResultActivity"></activity>
     </application>
 
 </manifest>

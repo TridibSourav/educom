@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/ques"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#79ff88"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:text="Display question will be visible to here.this is a demo text. Is it ok?"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:onClick="optionClick"
+        android:id="@+id/opt1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="A. First option"
+        android:textStyle="italic"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:background="#636e72"
+        android:padding="5dp"
+        android:layout_margin="15dp"/>
+    <TextView
+        android:onClick="optionClick"
+        android:id="@+id/opt2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="B. Second option"
+        android:textStyle="italic"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:background="#636e72"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_margin="15dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:onClick="optionClick"
+        android:id="@+id/opt3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="C. Third option"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:background="#636e72"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_margin="15dp"/>
+    <TextView
+        android:onClick="optionClick"
+        android:id="@+id/opt4"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="D. Fourth option"
+        android:textStyle="italic"
+        android:textSize="15dp"
+        android:background="#636e72"
+        android:padding="5dp"
+        android:gravity="center"
+        android:layout_margin="15dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pointTxt"
+        android:text="kkkkk"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#fff"/>
+
+
+</LinearLayout>

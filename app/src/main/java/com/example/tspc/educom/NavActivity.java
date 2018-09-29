@@ -73,20 +73,24 @@ public class NavActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            Intent intent =new Intent(NavActivity.this,TabActivity.class);
+        if (id == R.id.nav_video) {
+            Intent intent =new Intent(NavActivity.this,VideoCategory.class);
             startActivity(intent);
 
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_book) {
+            Intent intent =new Intent(NavActivity.this,TabActivity.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.LogOut) {
+            Intent intent =new Intent(NavActivity.this,LoginActivity.class);
+            startActivity(intent);
 
         }
 
@@ -105,5 +109,9 @@ public class NavActivity extends AppCompatActivity
 
     public void showBooks(View view) {
         startActivity(new Intent(NavActivity.this,TabActivity.class));
+    }
+
+    public void quiz(View view) {
+        startActivity(new Intent(NavActivity.this,QuizCat.class));
     }
 }

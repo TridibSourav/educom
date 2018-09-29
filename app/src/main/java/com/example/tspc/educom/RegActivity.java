@@ -50,6 +50,14 @@ public class RegActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("users");
+        userCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rb= (RadioButton) findViewById(checkedId);
+                uCat = rb.getText().toString();
+                Log.w("********",uCat);
+            }
+        });
 
     }
     @Override
@@ -78,16 +86,9 @@ public class RegActivity extends AppCompatActivity {
         uInst=EintName.getText().toString();
         uPass=Epass.getText().toString();
         uConpass=EconPass.getText().toString();
-        uCat="Teacher";
+        //uCat="Teacher";
 
-       /* userCat.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton rb= (RadioButton) findViewById(checkedId);
-                uCat = rb.getText().toString();
-                Log.w("********",uCat);
-            }
-        });*/
+
 
 
 
@@ -155,6 +156,7 @@ public class RegActivity extends AppCompatActivity {
     private void databaseUpdate(UserModel mUser,String userId) {
 
         myRef.child(userId).setValue(user);
+        startActivity(new Intent(RegActivity.this,LoginActivity.class));
     }
 
     private void updateUI(FirebaseUser user) {

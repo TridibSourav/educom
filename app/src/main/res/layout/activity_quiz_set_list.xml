@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/side_nav_bar"
-    tools:context=".AllItemLIst">
-
+    tools:context=".quiz.QuizSetList">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/itrmrecycler"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
