@@ -44,7 +44,9 @@
         <activity android:name=".QuizItem" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".quiz.QuizSetList" />
-        <activity android:name=".ResultActivity"></activity>
+        <activity android:name=".ResultActivity" />
+        <activity android:name=".discussion.DiscussionActivity" />
+        <activity android:name=".AnsActivity"></activity>
     </application>
 
 </manifest>

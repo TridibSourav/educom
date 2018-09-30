@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.tspc.educom.discussion.DiscussionActivity;
+
 public class NavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -113,5 +115,9 @@ public class NavActivity extends AppCompatActivity
 
     public void quiz(View view) {
         startActivity(new Intent(NavActivity.this,QuizCat.class));
+    }
+
+    public void DiscussionShow(View view) {
+        startActivity(new Intent(this, DiscussionActivity.class));
     }
 }
